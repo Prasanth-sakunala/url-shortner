@@ -1,6 +1,6 @@
 package com.java.urlshortner.Repo;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
@@ -12,7 +12,15 @@ public class URLRepository {
     private final Jedis jedis;
     private final String idKey;
     private final String urlKey;
-    private static final  Logger LOGGER= (Logger) LoggerFactory.getLogger(URLRepository.class);
+    private static final  Logger LOGGER= LoggerFactory.getLogger(URLRepository.class);
+   
+    
+
+    public URLRepository() {
+        this.jedis = new Jedis(); // or provide a suitable default Jedis instance/config
+        this.idKey = "id";
+        this.urlKey = "url:";
+    }
 
     public URLRepository(Jedis jedis) {
         this.jedis = jedis;

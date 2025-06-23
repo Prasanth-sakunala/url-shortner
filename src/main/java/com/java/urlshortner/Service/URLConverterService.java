@@ -1,6 +1,5 @@
 package com.java.urlshortner.Service;
-
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,7 @@ import com.java.urlshortner.Repo.URLRepository;
 
 @Service
 public class URLConverterService {
-    private static final Logger LOGGER=(Logger) LoggerFactory.getLogger(URLConverterService.class);
+    private static final Logger LOGGER=LoggerFactory.getLogger(URLConverterService.class);
     private final URLRepository urlRepository;
 
     @Autowired
